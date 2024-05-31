@@ -25,6 +25,7 @@ If you are running on the UNC longleaf cluster follow below steps to setup your 
 3. Prepare a samples.csv file. My scripts have been set up to run iteratively when submitting an array.
 i.e. Your samples.csv has 20 lines of code, you would be submitting your analysis as ` sbatch -p general --array=1-20 pipeline/03_predict.sh `
 I have added my samples.csv file for you to follow. Make sure the first line, BASE,SPECIES,STRAIN,BUSCO,LOCUS is also added to your samples.csv file.
+To add augustus to your lib folder run `cp -r /nas/longleaf/home/taniak/taniak/Annotation/lib ` this should copy the contents there.
 
 4. Add this in the conda portion of the scripts to the full path to my funannotate conda environment `conda activate /nas/longleaf/home/taniak/taniak/.conda/funannotate`
 5. If you have RNA-seq data you can run the training step (though this is optional) it will provide you with better accurate gene prediction sites for the prediction step (step 3).

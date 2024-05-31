@@ -33,3 +33,7 @@ To add augustus to your lib folder run `cp -r /nas/longleaf/home/taniak/taniak/A
 7. Steps 05a and 05b are necessary for your protein prediction as they provide with two different kinds of data.
 8. Final 06 step will provide you with your files including annotated gff3 files, along with an annotations.txt file which places your results in a table format along with amino acid genome and DNA genome files. A final sqn file is also generated with your table + gff3 file which can be submitted to NCBI.
 
+FAQ -
+Make sure your genome assembly files have only scaffolds_1, scaffolds_2, scaffolds_3 ... as the header and start for each scaffold otherwise Funannotate will throw errors. 
+Use `cat Organism.sorted.fasta | awk '/^>/{print ">scaffolds_" ++i; next}{print}' > 2`      
+    `mv 2 Organism.sorted.fasta ` as a means to adjust your headers. 
